@@ -1,7 +1,7 @@
 package com.sunnyweather.android.logic
 
 import androidx.lifecycle.liveData
-import com.sunnyweather.android.logic.model.PlaceResponse
+import com.sunnyweather.android.logic.model.Place
 import com.sunnyweather.android.logic.network.SunnyWeatherNetwork
 import kotlinx.coroutines.Dispatchers
 import java.lang.Exception
@@ -23,8 +23,9 @@ object Repository {
                 Result.failure(RuntimeException("response status is ${placeResponse.status}"))
             }
         } catch (e: Exception) {
-            Result.failure<List<PlaceResponse.Place>>(e)
+            Result.failure<List<com.sunnyweather.android.logic.model.Place>>(e)
         }
-        emit(result)
+        //TODO(为什么result需要cast 需要了解)
+        emit(result as Result<List<Place>>)
     }
 }

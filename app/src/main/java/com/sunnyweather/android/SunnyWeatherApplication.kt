@@ -12,6 +12,7 @@ import android.content.Context
 class SunnyWeatherApplication : Application() {
     companion object {
 
+        //郭霖的可以用 BNBRvBveaD2VfHVI
         const val TOKEN = "BNBRvBveaD2VfHVI"
 
         @SuppressLint("StaticFieldLeak")
